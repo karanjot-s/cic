@@ -1,3 +1,8 @@
+html {
+  --color-primary: #19151e;
+  --color-secondary: #ffd79d;
+}
+
 * {
   box-sizing: border-box;
   font-family: "Montserrat", "sans-serif";
@@ -5,12 +10,42 @@
 
 body {
   margin: 0;
+  background-image: url(/public/img/cic-hero-background.png);
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+button {
+  background-color: var(--color-secondary);
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+
+button:hover {
+  border: 1px solid white;
+  background: transparent;
+}
+
+button:hover a {
+  color: white;
 }
 
 nav {
   margin: 0;
   padding: 0.5rem 5rem;
-  background-color: black;
+  background-color: var(--color-primary);
   position: fixed;
   color: white;
   display: flex;
@@ -22,7 +57,13 @@ nav {
   transition: 0.2s;
 }
 
+nav img {
+  width: 60px;
+  margin-right: 0.5rem;
+}
+
 nav h1 {
+  display: inline;
   letter-spacing: 2px;
   font-size: 2rem;
   font-weight: bold;
@@ -88,9 +129,18 @@ nav h1 {
   top: -12px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 777px) {
   nav {
     padding: 0.8rem 0 !important;
+  }
+
+  nav img {
+    margin-left: 2rem;
+    z-index: 500;
+  }
+
+  nav h1 {
+    display: none;
   }
 
   .nav-list {
@@ -100,7 +150,7 @@ nav h1 {
     opacity: 0;
     width: 100%;
     height: 100vh;
-    background: black;
+    background: var(--color-primary);
     display: flex !important;
     padding-bottom: 100px;
     top: 0;
@@ -108,6 +158,7 @@ nav h1 {
     bottom: 0;
     transform: translateY(-100%);
     transition: 0.25s;
+    z-index: -1;
   }
 
   .nav-list ul {
@@ -158,60 +209,183 @@ nav h1 {
   }
 }
 
-
 .main-content {
-  background-image: url(/public/img/erwann-stephanne-gJIqqcm2ATM-unsplash.jpg);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
   display: flex;
-  justify-content:flex-start;
-  position: absolute;
-
-  height:90vh;
-  
+  justify-content: flex-start;
+  height: 120vh;
+  padding: 0 5rem;
   width: 100%;
+  position: relative;
 }
 
 .main-text {
-
-  margin: 20px;
+  margin: 20px 0;
   padding-top: 20vh;
-  padding-left: 30px;
+  width: 50%;
 }
 
 .main-text h1 {
   font-size: 3.5rem;
   color: white;
-  line-height: 2.5rem;
-  letter-spacing: 1px;
+  line-height: 4rem;
+  letter-spacing: 2px;
   font-weight: 700;
   margin: 0px;
   margin-bottom: 10px;
-
 }
 
 .main-text p {
-  width: 40%;
+  width: 80%;
   font-size: 1.5rem;
   /* font-synthesis: 2rem; */
   letter-spacing: 0.1rem;
 
-  color: white;
-
+  color: rgba(255, 255, 255, 0.76);
 }
 
-@media (max-width: 700px) {
-  .main-content {
-    height: 100vh;
+@media (max-width: 850px) {
+  .main-text {
+    width: 80%;
   }
-
   .main-text h1 {
     font-size: 2rem;
+    line-height: 2.5rem;
   }
   .main-text p {
     font-size: 1.2rem;
     width: 60%;
   }
+}
+
+@media (max-width: 850px) {
+  .main-text {
+    width: 100%;
+    text-align: center;
+  }
+  .main-text p {
+    width: 100%;
+  }
+}
+
+section {
+  height: 100vh;
+  position: relative;
+  background: transparent;
+
+  --border: 1px solid rgba(255, 255, 255, 0.356);
+}
+
+section::before {
+  content: "";
+  background-color: var(--color-primary);
+  position: absolute;
+  inset: 10% 0 0 0;
+}
+
+section * {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  color: white;
+}
+
+section .main {
+  background-color: var(--color-primary);
+  border: var(--border);
+  width: 90%;
+  height: 70%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section .intro {
+  width: 40%;
+  height: 100%;
+  border-right: var(--border);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 5%;
+  background-image: url("../public/img/cic-about-background.png");
+}
+
+.intro h3 {
+  font-size: 2rem;
+  margin: 1rem 0;
+  font-weight: 600;
+}
+
+.intro p {
+  color: rgba(143, 143, 143, 0.933);
+}
+
+section .detail {
+  flex: 1;
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  padding: 0 5%;
+}
+
+section .card {
+  background: #2b2238;
+  width: 220px;
+  height: 300px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 10%;
+  gap: 0.5rem;
+  border-radius: 10px;
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.3);
+  padding-bottom: 8%;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  right: 10%;
+  height: 4px;
+  border-radius: 1000px;
+  background-color: rgba(255, 255, 255, 0.16);
+}
+
+.card h4 {
+  margin-left: -15%;
+  color: var(--color-secondary);
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.card img {
+  width: 30%;
+  align-self: flex-start;
+  margin-bottom: 2rem;
+}
+
+.card-1 {
+  margin: -30vh 0 0 10%;
+}
+
+.card-3 {
+  margin: -30vh 0 0 10%;
+}
+
+.card-2 {
+  margin: 5vh 0 0 10%;
+}
+
+.card-4 {
+  margin: 5vh 0 0 10%;
 }
