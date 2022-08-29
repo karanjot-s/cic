@@ -55,11 +55,13 @@ nav {
   width: 100% !important;
   top: 0;
   transition: 0.2s;
+  /* box-shadow: black 0px 2px 55px 8px; */
 }
 
 nav img {
   width: 60px;
   margin-right: 0.5rem;
+  vertical-align: revert;
 }
 
 nav h1 {
@@ -76,6 +78,7 @@ nav h1 {
   align-items: center;
   gap: 1.5rem;
   font-size: 1.3rem;
+  margin: revert !important;
 }
 
 .nav-list ul li a {
@@ -447,9 +450,8 @@ section .card {
 #middle {
   height: 100vh;
 }
-#middle .detail{
+#middle .detail {
   display: block;
-
 }
 
 #middle .intro {
@@ -484,13 +486,9 @@ section .card {
     text-align: justify;
     display: block;
   }
-
-  
 }
 
-
-
-a{
+a {
   text-decoration: none;
 }
 .footer-top {
@@ -498,7 +496,6 @@ a{
   background: #2b2238;
   text-align: left;
   color: #aaa;
-  
 }
 
 .footer-top h3 {
@@ -564,13 +561,17 @@ a{
 
 .footer-social a {
   margin-left: 20px;
-  color: #777;
+  color: rgb(229, 229, 229);
   border: 0;
+  background-color: transparent;
+  padding: 1rem;
+  border-radius: 100px;
+  transition: 0.2s;
 }
 
 .footer-social a:hover,
 .footer-social a:focus {
-  color: #79a05f;
+  color: var(--color-secondary);
   border: 0;
 }
 
@@ -594,27 +595,125 @@ a{
   border: 0;
 }
 
+@media (max-width: 575px) {
+  .footer-social,
+  .footer-copyright {
+    text-align: center;
+  }
+}
 
-.email{
+.email {
   color: #aaa;
 }
-.email:hover{
+.email:hover {
   color: white;
 }
 
-.yt :hover{
-  color: #FF0000 ;
+#social {
+  margin-top: -10vh;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 min(8rem, 10vw);
+  padding-bottom: 10vh;
 }
 
-.twitter :hover{
-  color: #1DA1F2;
+#social hr {
+  width: 60%;
+  margin: 1rem 0;
+  height: 5px;
+  border: none;
+  background: var(--color-secondary);
+  opacity: 1;
+  border-radius: 100px;
 }
-.discord :hover{
-  color: #7289d9;
+
+#social p {
+  text-align: justify;
 }
-.insta :hover{
-  color:#C13584;
+
+.links {
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 50%;
 }
-.wp :hover{
-  color:#25D366
+
+.links button {
+  background-color: #5865f2;
+  padding: 1rem 2rem;
+  width: fit-content;
+  margin: auto;
+}
+
+.links button i {
+  color: black;
+  scale: 1.3;
+  margin-right: 0.2rem;
+}
+
+.links button:hover {
+  background-color: transparent;
+}
+
+.links button:hover i {
+  color: white;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.icons i {
+  scale: 1.8;
+  color: black;
+}
+
+.icons a {
+  background-color: white;
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  transition: 0.35s;
+}
+
+.wp,
+.insta {
+  padding: 1rem 1.4rem !important;
+}
+
+.icons a:hover {
+  border-radius: 50px;
+}
+
+.icons a:hover i {
+  color: #ffffff;
+}
+
+.wp:hover {
+  background: #25d266;
+}
+
+.twitter:hover {
+  background: #1da1f2;
+}
+
+.insta:hover {
+  background: #c13584;
+}
+
+.yt:hover {
+  background: #ff0000;
+}
+
+@media (max-width: 777px) {
+  #social {
+    margin-top: 0vh;
+  }
 }
