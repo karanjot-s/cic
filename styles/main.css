@@ -11,11 +11,22 @@ html {
 
 body {
   margin: 0;
+  background: transparent;
+  overflow-x: hidden;
+}
+
+#background {
   background-image: url("../public/img/cic-hero-background.png");
   background-position: top center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+
+  transform: scale(100%);
+
+  position: absolute;
+  inset: 0;
+  height: 150vh;
 }
 
 button {

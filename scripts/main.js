@@ -9,3 +9,12 @@ navBtn.onclick = () => {
     nav.classList.add(navShownClass);
   }
 };
+
+const background = document.getElementById("background");
+
+window.onscroll = () => {
+  var scroll = document.documentElement.scrollTop;
+  var zoom = scroll / 20;
+
+  background.style.transform = `scale(${100 + zoom}%)`;
+};
