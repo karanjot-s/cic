@@ -1,6 +1,7 @@
 html {
   --color-primary: #19151e;
   --color-secondary: #ffd79d;
+  scroll-behavior: smooth;
 }
 
 * {
@@ -743,7 +744,7 @@ a {
 
 .footer-contact {
   /* flex: 1; */
-  min-width: 280px;
+  min-width: 330px;
 }
 
 .footer-links {
