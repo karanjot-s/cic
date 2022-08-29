@@ -18,3 +18,27 @@ window.onscroll = () => {
 
   background.style.transform = `scale(${100 + zoom}%)`;
 };
+
+function addObserver(elements, className) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add(className);
+        return;
+      }
+
+      entry.target.classList.remove(className);
+    });
+  });
+
+  elements.forEach((elem) => {
+    observer.observe(elem);
+  });
+}
+
+addObserver(document.querySelectorAll(".card"), "animate-card");
+addObserver(document.querySelectorAll(".fcard"), "animate-card");
+addObserver(document.querySelectorAll("#about .main"), "animate-about-main");
+addObserver(document.querySelectorAll("#middle .main"), "animate-middle-main");
+addObserver(document.querySelectorAll("#social *"), "animate-zoom");
+// addObserver(document.querySelectorAll("footer div div"), "animate-footer");

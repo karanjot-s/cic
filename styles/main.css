@@ -789,3 +789,127 @@ a {
   min-width: fit-content;
   margin: auto;
 }
+
+#founders {
+  --border: none;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10vh 0;
+  padding-bottom: 20vh;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+#founders .intro {
+  background-image: none;
+  font-size: 2rem;
+}
+
+#founders .cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.fcard {
+  background: #2b2238;
+  padding: 3rem 4rem;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.fcard h3 {
+  color: var(--color-secondary);
+}
+
+.fcard p {
+  margin-top: 0.8rem;
+}
+
+.fcard .links {
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  width: 100%;
+  margin-left: 0.3rem;
+}
+
+.fcard .links i {
+  scale: 1.5;
+}
+
+#founders img {
+  width: 150px;
+  height: 150px;
+  border-radius: 1000px;
+  margin-bottom: 1rem;
+}
+
+/* Scroll Animations */
+@keyframes wipe-enter {
+  0% {
+    transform: translateX(-30%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes wipe-enter-short {
+  0% {
+    transform: translateX(-10%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+}
+@keyframes wipe-enter-reverse {
+  0% {
+    transform: translateX(30%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+}
+@keyframes zoom-enter {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+@keyframes wipe-enter-bottom {
+  0% {
+    transform: translateY(30%);
+  }
+  50% {
+    transform: translateY(10%);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .animate-card {
+    animation: wipe-enter 1s forwards;
+  }
+  .animate-about-main {
+    animation: wipe-enter-short 1s forwards;
+  }
+  .animate-middle-main {
+    animation: wipe-enter-reverse 1s forwards;
+  }
+  .animate-zoom {
+    animation: zoom-enter 1s forwards;
+  }
+  .animate-footer {
+    animation: wipe-enter-bottom 1s forwards;
+  }
+}
