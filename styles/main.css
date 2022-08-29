@@ -279,6 +279,10 @@ section::before {
   content: "";
   background-color: var(--color-primary);
   position: absolute;
+  inset: 0 0 0 0;
+}
+
+section#about::before {
   inset: 10% 0 0 0;
 }
 
@@ -338,7 +342,7 @@ section .card {
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   padding: 0 10%;
   gap: 0.5rem;
@@ -359,7 +363,6 @@ section .card {
 }
 
 .card h4 {
-  margin-left: -15%;
   color: var(--color-secondary);
 }
 
@@ -390,81 +393,91 @@ section .card {
   margin: 5vh 0 0 10%;
 }
 
+@media (max-width: 1000px) {
+  .main-content {
+    height: 100vh;
+  }
 
+  #about {
+    --border: none;
+    height: fit-content;
+  }
 
-#middle{
-  height: 130vh;
-  position: relative;
-  background: transparent;
+  #about::before {
+    inset: 0 0 0 0;
+  }
 
-  --border: 1px solid rgba(255, 255, 255, 0.356);
+  #about .main {
+    flex-direction: column;
+    height: fit-content;
+    width: 100%;
+  }
+
+  #about .intro {
+    width: 100%;
+    background: none;
+    /* background-position: center center;
+    background-size: cover; */
+    padding: 3rem 0;
+    padding-bottom: 10vh;
+  }
+
+  #about .intro h3,
+  #about .intro p {
+    width: min(450px, 100%);
+  }
+
+  #about .detail {
+    margin-top: -5vh;
+    width: 100%;
+    justify-content: space-around;
+    height: fit-content;
+    grid-template-columns: repeat(auto-fill, min(300px, 80%));
+    justify-items: center;
+    gap: 1.5rem;
+    margin-bottom: 10vh;
+  }
+
+  #about .card {
+    width: 100%;
+    margin: 0;
+  }
 }
 
-#middle ::before{
-  content: "";
-  /* background-color: var(--color-primary); */
-  position: absolute;
-  inset: 10% 0 0 0;
+#middle {
+  height: 100vh;
 }
 
-#middle *{
-  margin: 0;
-  padding: 0;
-  position: relative;
-  color: white;
-}
-
-#middle .box{
-  background-color: var(--color-primary);
-  border: var(--border);
-  width: 90%;
-  height: 70%;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-}
-
-#middle .left{
-  width: 50%;
+#middle .intro {
   height: 100%;
-  border-right: var(--border);
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 0 5%;
-  background-image: url("../public/img/c837a6_41aece62e57346379d12018aece18ea2_mv2.webp");
+  background-image: url("../public/img/cic-middle-background.png");
   background-position: center center;
- 
+  background-size: cover;
 }
 
-.left h3{
-  font-size: 2rem;
-  margin: 1rem 0;
-  font-weight: 600;
-  color: rgba(143, 143, 143, 0.933);
-}
+@media (max-width: 777px) {
+  #middle {
+    height: fit-content;
+    --border: none;
+  }
 
-#middle .right{
-  flex: 1;
-  display: grid;
-  grid-template-columns: auto auto;
-  align-items: center;
-  padding: 0 5%;
-  width: 40%;
-  height: 100%;
-  border-right: var(--border);
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 0 5%;
-}
+  #middle .main {
+    flex-direction: column;
+    width: 100%;
+  }
 
-.right .p{
-  color: rgba(143, 143, 143, 0.933);
+  #middle .intro {
+    width: 100%;
+    padding: 5rem 2rem;
+  }
+
+  #middle .detail {
+    padding: 4rem 3rem;
+    text-align: justify;
+    display: block;
+  }
+
+  #middle .detail p {
+    margin-bottom: 1rem;
+  }
 }
