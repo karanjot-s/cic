@@ -61,7 +61,10 @@ nav {
 nav img {
   width: 60px;
   margin-right: 0.5rem;
-  vertical-align: revert;
+  
+}
+img{
+  vertical-align: revert !important;
 }
 
 nav h1 {
@@ -250,10 +253,12 @@ nav h1 {
   .main-text {
     width: 80%;
   }
+
   .main-text h1 {
     font-size: 2rem;
     line-height: 2.5rem;
   }
+
   .main-text p {
     font-size: 1.2rem;
     width: 60%;
@@ -265,6 +270,7 @@ nav h1 {
     width: 100%;
     text-align: center;
   }
+
   .main-text p {
     width: 100%;
   }
@@ -450,6 +456,7 @@ section .card {
 #middle {
   height: 100vh;
 }
+
 #middle .detail {
   display: block;
 }
@@ -491,6 +498,7 @@ section .card {
 a {
   text-decoration: none;
 }
+
 .footer-top {
   padding: 60px 0;
   background: #2b2238;
@@ -596,6 +604,7 @@ a {
 }
 
 @media (max-width: 575px) {
+
   .footer-social,
   .footer-copyright {
     text-align: center;
@@ -605,6 +614,7 @@ a {
 .email {
   color: #aaa;
 }
+
 .email:hover {
   color: white;
 }
