@@ -1,5 +1,6 @@
 const nav = document.getElementById("nav");
 const navBtn = document.getElementById("nav-btn");
+const navLinks = document.querySelectorAll(".nav-list a");
 const navShownClass = "nav-shown";
 
 navBtn.onclick = () => {
@@ -9,6 +10,12 @@ navBtn.onclick = () => {
     nav.classList.add(navShownClass);
   }
 };
+
+navLinks.forEach((navLink) => {
+  navLink.onclick = () => {
+    nav.classList.remove(navShownClass);
+  };
+});
 
 const background = document.getElementById("background");
 
