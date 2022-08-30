@@ -12,12 +12,16 @@ navBtn.onclick = () => {
 
 const background = document.getElementById("background");
 
-window.onscroll = () => {
-  var scroll = document.documentElement.scrollTop;
-  var zoom = scroll / 20;
+if (window.innerWidth > 900) {
+  window.onscroll = () => {
+    var scroll = document.documentElement.scrollTop;
+    var zoom = scroll / 20;
 
-  background.style.transform = `scale(${100 + zoom}%)`;
-};
+    if (scroll < 500) {
+      background.style.transform = `scale(${100 + zoom}%)`;
+    }
+  };
+}
 
 function addObserver(elements, className) {
   const observer = new IntersectionObserver((entries) => {
@@ -39,6 +43,6 @@ function addObserver(elements, className) {
 addObserver(document.querySelectorAll(".card"), "animate-card");
 addObserver(document.querySelectorAll(".fcard"), "animate-card");
 addObserver(document.querySelectorAll("#about .main"), "animate-about-main");
-addObserver(document.querySelectorAll("#middle .main"), "animate-middle-main");
+// addObserver(document.querySelectorAll("#middle .main"), "animate-middle-main");
 addObserver(document.querySelectorAll("#social *"), "animate-zoom");
 // addObserver(document.querySelectorAll("footer div div"), "animate-footer");
